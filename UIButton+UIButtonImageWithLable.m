@@ -33,9 +33,10 @@
     [self setImage:image forState:stateType];
     
     [self.titleLabel setContentMode:UIViewContentModeCenter];
-    UIEdgeInsets inset = UIEdgeInsetsMake(image.size.height, -image.size.width, -image.size.height, 0.0);
+    CGSize titleSize = [title sizeWithFont:self.titleLabel.font];
+    UIEdgeInsets inset = UIEdgeInsetsMake(image.size.height, -image.size.width, -titleSize.height, 0.0);
     if (top) {
-        inset = UIEdgeInsetsMake(-image.size.height, -image.size.width, image.size.height, 0.0);
+        inset = UIEdgeInsetsMake(-image.size.height, -image.size.width, titleSize.height, 0.0);
     }
     [self setTitleEdgeInsets:inset];
     [self setTitle:title forState:stateType];
