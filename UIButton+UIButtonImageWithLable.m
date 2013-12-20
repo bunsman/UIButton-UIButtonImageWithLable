@@ -34,9 +34,9 @@
     
     [self.titleLabel setContentMode:UIViewContentModeCenter];
     CGSize titleSize = [title sizeWithFont:self.titleLabel.font];
-    UIEdgeInsets inset = UIEdgeInsetsMake(image.size.height, -image.size.width, -titleSize.height, 0.0);
+    UIEdgeInsets inset = UIEdgeInsetsMake(0.0, -image.size.width, -(image.size.height + titleSize.height), 0.0);
     if (top) {
-        inset = UIEdgeInsetsMake(-image.size.height, -image.size.width, titleSize.height, 0.0);
+        inset = UIEdgeInsetsMake(-(image.size.height + titleSize.height), -image.size.width, 0.0, 0.0);
     }
     [self setTitleEdgeInsets:inset];
     [self setTitle:title forState:stateType];
